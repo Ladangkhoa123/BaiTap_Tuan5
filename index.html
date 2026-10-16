@@ -54,6 +54,17 @@
             <span class="sidebar-tip-icon" aria-hidden="true">✦</span>
             <p>Mỗi việc nhỏ hoàn thành là một bước tiến thật lớn.</p>
           </div>
+          <section class="history-panel" aria-labelledby="history-heading">
+            <div class="history-heading">
+              <div>
+                <p class="sidebar-eyebrow">NHẬT KÝ HOẠT ĐỘNG</p>
+                <h2 class="sidebar-title" id="history-heading">Lịch sử</h2>
+              </div>
+              <span class="history-count" id="history-count">0</span>
+            </div>
+            <ul class="history-list" id="history-list" aria-live="polite"></ul>
+            <p class="history-empty" id="history-empty">Hoạt động của bạn sẽ xuất hiện ở đây.</p>
+          </section>
         </aside>
 
         <div class="main-content">
@@ -105,17 +116,20 @@
             </form>
 
             <ul class="task-list" id="task-list">
-              <li class="task-item">
+              <li class="task-item" data-priority="normal">
                 <input class="task-check" type="checkbox" id="task-one" />
                 <label class="task-text" for="task-one">Uống một cốc nước và bắt đầu ngày mới</label>
+                <span class="priority-tag">Bình thường</span>
               </li>
-              <li class="task-item">
+              <li class="task-item" data-priority="normal">
                 <input class="task-check" type="checkbox" id="task-two" />
                 <label class="task-text" for="task-two">Hoàn thành bài tập thiết kế giao diện</label>
+                <span class="priority-tag">Bình thường</span>
               </li>
-              <li class="task-item">
+              <li class="task-item" data-priority="normal">
                 <input class="task-check" type="checkbox" id="task-three" />
                 <label class="task-text" for="task-three">Dành 15 phút nghỉ ngơi</label>
+                <span class="priority-tag">Bình thường</span>
               </li>
             </ul>
             <p class="no-search-results" id="no-search-results" hidden>Không tìm thấy công việc phù hợp.</p>
