@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Danh sách việc cần làm giúp bạn sắp xếp một ngày thật nhẹ nhàng."
+    />
+    <title>Một ngày thật tốt — Việc cần làm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Một ngày thật tốt, trang chủ">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>một ngày thật tốt</span>
+        </a>
+        <span class="topbar-note"><span class="status-dot"></span> Góc nhỏ của bạn</span>
+      </header>
+
+      <section class="welcome" aria-labelledby="greeting">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span aria-hidden="true">☀</span> HÔM NAY LÀ CỦA BẠN</p>
+          <h1 id="greeting">Chào Khoa,<br />hôm nay bạn thế nào?</h1>
+          <p class="welcome-subtitle">Chậm một chút cũng không sao. Mình cùng bắt đầu nhé.</p>
+        </div>
+        <div class="clock-card" aria-label="Thời gian tham khảo">
+          <span class="clock-label">GIỜ THAM KHẢO</span>
+          <time class="clock-time" datetime="2026-10-16T18:35:00+07:00">18:35:00</time>
+          <span class="clock-date">Thứ Sáu, 16 tháng 10</span>
+          <span class="clock-sun" aria-hidden="true">☀</span>
+        </div>
+        <span class="sparkle sparkle-one" aria-hidden="true">✳</span>
+        <span class="sparkle sparkle-two" aria-hidden="true">✦</span>
+      </section>
+
+      <section class="task-panel" aria-labelledby="tasks-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">KẾ HOẠCH NHỎ</p>
+            <h2 id="tasks-heading">Việc cần làm <span aria-hidden="true">✎</span></h2>
+          </div>
+          <span class="today-label"><span aria-hidden="true">✿</span> Hôm nay</span>
+        </div>
+
+        <div class="task-form">
+          <label class="visually-hidden" for="task-input">Nhập công việc cần làm</label>
+          <span class="input-icon" aria-hidden="true">✧</span>
+          <input
+            id="task-input"
+            type="text"
+            placeholder="Bạn muốn hoàn thành điều gì?"
+            maxlength="120"
+            autocomplete="off"
+          />
+          <button class="add-button" type="button" disabled title="Cần JavaScript hoặc backend để thêm công việc">
+            <span aria-hidden="true">＋</span>
+            <span>Thêm</span>
+          </button>
+        </div>
+        <p class="static-note">Bản HTML/CSS: bạn có thể đánh dấu hoàn thành; thêm việc và đồng hồ trực tiếp cần JavaScript hoặc backend.</p>
+
+        <ul class="task-list">
+          <li class="task-item">
+            <input class="task-check" type="checkbox" id="task-one" />
+            <label class="task-text" for="task-one">Uống một cốc nước và bắt đầu ngày mới</label>
+          </li>
+          <li class="task-item">
+            <input class="task-check" type="checkbox" id="task-two" />
+            <label class="task-text" for="task-two">Hoàn thành bài tập thiết kế giao diện</label>
+          </li>
+          <li class="task-item">
+            <input class="task-check" type="checkbox" id="task-three" />
+            <label class="task-text" for="task-three">Dành 15 phút nghỉ ngơi</label>
+          </li>
+        </ul>
+      </section>
+
+      <footer class="footer">
+        <p>Bạn có <strong>3</strong> việc cần làm</p>
+        <p class="footer-note">Từng bước nhỏ tạo nên những ngày tuyệt vời <span aria-hidden="true">♥</span></p>
+      </footer>
+    </main>
+  </body>
+</html>
