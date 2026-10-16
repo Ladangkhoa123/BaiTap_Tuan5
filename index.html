@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <main class="app-shell">
@@ -23,71 +24,109 @@
           <span class="brand-mark" aria-hidden="true">✳</span>
           <span>một ngày thật tốt</span>
         </a>
-        <span class="topbar-note"><span class="status-dot"></span> Góc nhỏ của bạn</span>
-      </header>
-
-      <section class="welcome" aria-labelledby="greeting">
-        <div class="welcome-copy">
-          <p class="eyebrow"><span aria-hidden="true">☀</span> HÔM NAY LÀ CỦA BẠN</p>
-          <h1 id="greeting">Chào Khoa,<br />hôm nay bạn thế nào?</h1>
-          <p class="welcome-subtitle">Chậm một chút cũng không sao. Mình cùng bắt đầu nhé.</p>
-        </div>
-        <div class="clock-card" aria-label="Thời gian tham khảo">
-          <span class="clock-label">GIỜ THAM KHẢO</span>
-          <time class="clock-time" datetime="2026-10-16T18:35:00+07:00">18:35:00</time>
-          <span class="clock-date">Thứ Sáu, 16 tháng 10</span>
-          <span class="clock-sun" aria-hidden="true">☀</span>
-        </div>
-        <span class="sparkle sparkle-one" aria-hidden="true">✳</span>
-        <span class="sparkle sparkle-two" aria-hidden="true">✦</span>
-      </section>
-
-      <section class="task-panel" aria-labelledby="tasks-heading">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow section-eyebrow">KẾ HOẠCH NHỎ</p>
-            <h2 id="tasks-heading">Việc cần làm <span aria-hidden="true">✎</span></h2>
-          </div>
-          <span class="today-label"><span aria-hidden="true">✿</span> Hôm nay</span>
-        </div>
-
-        <div class="task-form">
-          <label class="visually-hidden" for="task-input">Nhập công việc cần làm</label>
-          <span class="input-icon" aria-hidden="true">✧</span>
-          <input
-            id="task-input"
-            type="text"
-            placeholder="Bạn muốn hoàn thành điều gì?"
-            maxlength="120"
-            autocomplete="off"
-          />
-          <button class="add-button" type="button" disabled title="Cần JavaScript hoặc backend để thêm công việc">
-            <span aria-hidden="true">＋</span>
-            <span>Thêm</span>
+        <div class="header-actions">
+          <span class="topbar-note"><span class="status-dot"></span> Góc nhỏ của bạn</span>
+          <button
+            class="theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Bật chế độ tối"
+            aria-pressed="false"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+            <span class="theme-toggle-text">Chế độ tối</span>
+            <span class="switch-track" aria-hidden="true"><span class="switch-thumb"></span></span>
           </button>
         </div>
-        <p class="static-note">Bản HTML/CSS: bạn có thể đánh dấu hoàn thành; thêm việc và đồng hồ trực tiếp cần JavaScript hoặc backend.</p>
+      </header>
 
-        <ul class="task-list">
-          <li class="task-item">
-            <input class="task-check" type="checkbox" id="task-one" />
-            <label class="task-text" for="task-one">Uống một cốc nước và bắt đầu ngày mới</label>
-          </li>
-          <li class="task-item">
-            <input class="task-check" type="checkbox" id="task-two" />
-            <label class="task-text" for="task-two">Hoàn thành bài tập thiết kế giao diện</label>
-          </li>
-          <li class="task-item">
-            <input class="task-check" type="checkbox" id="task-three" />
-            <label class="task-text" for="task-three">Dành 15 phút nghỉ ngơi</label>
-          </li>
-        </ul>
-      </section>
+      <div class="dashboard-layout">
+        <aside class="sidebar" aria-label="Tìm kiếm công việc">
+          <p class="sidebar-eyebrow">KHÔNG GIAN CỦA BẠN</p>
+          <h2 class="sidebar-title">Tìm công việc</h2>
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Tìm kiếm công việc</span>
+            <input id="task-search" type="search" placeholder="Tìm kiếm bài viết..." autocomplete="off" />
+          </label>
+          <p class="sidebar-hint">Gõ từ khóa để lọc danh sách ngay lập tức.</p>
+          <div class="sidebar-tip">
+            <span class="sidebar-tip-icon" aria-hidden="true">✦</span>
+            <p>Mỗi việc nhỏ hoàn thành là một bước tiến thật lớn.</p>
+          </div>
+        </aside>
 
-      <footer class="footer">
-        <p>Bạn có <strong>3</strong> việc cần làm</p>
-        <p class="footer-note">Từng bước nhỏ tạo nên những ngày tuyệt vời <span aria-hidden="true">♥</span></p>
-      </footer>
+        <div class="main-content">
+          <section class="welcome" aria-labelledby="greeting">
+            <div class="welcome-copy">
+              <p class="eyebrow"><span aria-hidden="true">☀</span> HÔM NAY LÀ CỦA BẠN</p>
+              <h1 id="greeting">Chào Khoa,<br />hôm nay bạn thế nào?</h1>
+              <p class="welcome-subtitle">Chậm một chút cũng không sao. Mình cùng bắt đầu nhé.</p>
+            </div>
+            <div class="clock-card" aria-label="Thời gian Việt Nam">
+              <span class="clock-label">GIỜ VIỆT NAM</span>
+              <time class="clock-time" id="clock-time">--:--:--</time>
+              <span class="clock-date" id="clock-date"></span>
+              <span class="clock-sun" aria-hidden="true">☀</span>
+            </div>
+            <span class="sparkle sparkle-one" aria-hidden="true">✳</span>
+            <span class="sparkle sparkle-two" aria-hidden="true">✦</span>
+          </section>
+
+          <section class="task-panel" aria-labelledby="tasks-heading">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow section-eyebrow">KẾ HOẠCH NHỎ</p>
+                <h2 id="tasks-heading">Việc cần làm <span aria-hidden="true">✎</span></h2>
+              </div>
+              <span class="today-label"><span aria-hidden="true">✿</span> Hôm nay</span>
+            </div>
+
+            <form class="task-form" id="task-form">
+              <label class="visually-hidden" for="task-input">Nhập công việc cần làm</label>
+              <span class="input-icon" aria-hidden="true">✧</span>
+              <input
+                id="task-input"
+                type="text"
+                placeholder="Bạn muốn hoàn thành điều gì?"
+                maxlength="120"
+                autocomplete="off"
+              />
+              <label class="visually-hidden" for="task-priority">Mức độ ưu tiên</label>
+              <select id="task-priority" class="priority-select">
+                <option value="normal">Bình thường</option>
+                <option value="important">Quan trọng</option>
+                <option value="low">Thấp</option>
+              </select>
+              <button class="add-button" type="submit">
+                <span aria-hidden="true">＋</span>
+                <span>Thêm</span>
+              </button>
+            </form>
+
+            <ul class="task-list" id="task-list">
+              <li class="task-item">
+                <input class="task-check" type="checkbox" id="task-one" />
+                <label class="task-text" for="task-one">Uống một cốc nước và bắt đầu ngày mới</label>
+              </li>
+              <li class="task-item">
+                <input class="task-check" type="checkbox" id="task-two" />
+                <label class="task-text" for="task-two">Hoàn thành bài tập thiết kế giao diện</label>
+              </li>
+              <li class="task-item">
+                <input class="task-check" type="checkbox" id="task-three" />
+                <label class="task-text" for="task-three">Dành 15 phút nghỉ ngơi</label>
+              </li>
+            </ul>
+            <p class="no-search-results" id="no-search-results" hidden>Không tìm thấy công việc phù hợp.</p>
+          </section>
+
+          <footer class="footer">
+            <p id="task-count">Bạn có <strong>3</strong> việc cần làm</p>
+            <p class="footer-note">Từng bước nhỏ tạo nên những ngày tuyệt vời <span aria-hidden="true">♥</span></p>
+          </footer>
+        </div>
+      </div>
     </main>
   </body>
 </html>
